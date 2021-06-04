@@ -31,57 +31,64 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Container(
-              color: Colors.red,
-              child: Text(
-                'First Text',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
+      body: Container(
+        color: Colors.black,
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Container(
+                color: Colors.red,
+                child: Text(
+                  'First Text',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                  ),
                 ),
               ),
             ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.green,
-              child: Text(
-                'Second Text',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
+            Expanded(
+              child: Container(
+                color: Colors.green,
+                width: double.infinity,
+                child: Text(
+                  'Second Text',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                  ),
                 ),
               ),
             ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.blue,
-              child: Text(
-                'Third Text',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
+            Expanded(
+              child: Container(
+                color: Colors.blue,
+                child: Text(
+                  'Third Text',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                  ),
                 ),
               ),
             ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.amber,
-              child: Text(
-                'Fourth Text',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
+            Expanded(
+              child: Container(
+                color: Colors.amber,
+                width: double.infinity,
+                child: Text(
+                  'Fourth Text',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
