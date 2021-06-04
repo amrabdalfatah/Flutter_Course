@@ -49,6 +49,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              Divider(
+                color: Colors.white,
+              ),
               Container(
                 height: 200,
                 color: Colors.green,
@@ -61,6 +64,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              Divider(
+                color: Colors.white,
+              ),
               Container(
                 height: 200,
                 color: Colors.blue,
@@ -71,6 +77,9 @@ class HomeScreen extends StatelessWidget {
                     fontSize: 30,
                   ),
                 ),
+              ),
+              Divider(
+                color: Colors.white,
               ),
               Container(
                 height: 200,
