@@ -34,11 +34,12 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         color: Colors.black,
         width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Container(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 200,
                 color: Colors.red,
                 child: Text(
                   'First Text',
@@ -48,9 +49,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            Expanded(
-              child: Container(
+              Container(
+                height: 200,
                 color: Colors.green,
                 width: double.infinity,
                 child: Text(
@@ -61,9 +61,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            Expanded(
-              child: Container(
+              Container(
+                height: 200,
                 color: Colors.blue,
                 child: Text(
                   'Third Text',
@@ -73,9 +72,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            Expanded(
-              child: Container(
+              Container(
+                height: 200,
                 color: Colors.amber,
                 width: double.infinity,
                 child: Text(
@@ -86,8 +84,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
