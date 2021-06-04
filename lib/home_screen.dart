@@ -31,71 +31,45 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Container(
-        color: Colors.black,
-        width: double.infinity,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                height: 200,
-                color: Colors.red,
-                child: Text(
-                  'First Text',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                  ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(50.0),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadiusDirectional.only(
+                  topStart: Radius.circular(20),
+                  bottomEnd: Radius.circular(20),
                 ),
               ),
-              Divider(
-                color: Colors.white,
-              ),
-              Container(
-                height: 200,
-                color: Colors.green,
-                width: double.infinity,
-                child: Text(
-                  'Second Text',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  Image.network(
+                    'https://www.thoughtco.com/thmb/mik7Z00SAYN786BQbieXWOzZmc8=/2121x1414/filters:fill(auto,1)/lotus-flower-828457262-5c6334b646e0fb0001dcd75a.jpg',
+                    height: 200,
+                    width: 200,
+                    fit: BoxFit.cover,
                   ),
-                ),
-              ),
-              Divider(
-                color: Colors.white,
-              ),
-              Container(
-                height: 200,
-                color: Colors.blue,
-                child: Text(
-                  'Third Text',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
+                  Container(
+                    width: 200,
+                    color: Colors.black.withOpacity(0.5),
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: Text(
+                      'Flower',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 30,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
-              Divider(
-                color: Colors.white,
-              ),
-              Container(
-                height: 200,
-                color: Colors.amber,
-                width: double.infinity,
-                child: Text(
-                  'Fourth Text',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
