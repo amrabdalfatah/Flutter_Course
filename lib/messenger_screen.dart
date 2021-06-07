@@ -1,6 +1,71 @@
 import 'package:flutter/material.dart';
 
 class MessengerScreen extends StatelessWidget {
+  final List<PersonModel> personModel = [
+    PersonModel(
+      name: 'Ali Mohamed',
+      imageUrl:
+          'https://i.pinimg.com/736x/04/bb/21/04bb2164bbfa3684118a442c17d086bf.jpg',
+      message: 'ايه الاخبار؟',
+      time: '02:30 pm',
+    ),
+    PersonModel(
+      name: 'Ghada Khaled',
+      imageUrl:
+          'https://expertphotography.com/wp-content/uploads/2018/10/cool-profile-pictures-retouching-1.jpg',
+      message: 'كنت لسه بذاكر امبارح والى هو لسه مخلصه دلوقتى وبقلب ف الفيس',
+      time: '02:15 pm',
+    ),
+    PersonModel(
+      name: 'Ahmed Abdelfatah',
+      imageUrl:
+          'https://helostatus.com/wp-content/uploads/2021/03/2021-WhatsApp-profile-photo.jpg',
+      message: 'Hello, My name is Ahmed',
+      time: '01:15 pm',
+    ),
+    PersonModel(
+      name: 'Elsayed Ibrahim',
+      imageUrl:
+          'https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      message: 'Hello, Amr How are you?',
+      time: '01:00 pm',
+    ),
+    PersonModel(
+      name: 'Ahmed Mohamed',
+      imageUrl:
+          'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      message: 'ايه ي عم فينك ليك واحشة',
+      time: '12:30 pm',
+    ),
+    PersonModel(
+      name: 'Eman Mohamed',
+      imageUrl:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnub98gyoXNvkPnyOWxTE1zzAQiP1aeYceGA&usqp=CAU',
+      message: 'كنت ملخصه المنهج',
+      time: '11:14 am',
+    ),
+    PersonModel(
+      name: 'Yara Ayman',
+      imageUrl:
+          'https://expertphotography.com/wp-content/uploads/2020/08/social-media-profile-photos-9.jpg',
+      message: 'ابدا شغاله على المشروع',
+      time: '09:15 am',
+    ),
+    PersonModel(
+      name: 'Mohamed Ibrahim',
+      imageUrl:
+          'https://static.wikia.nocookie.net/sonic-underground/images/0/00/Guy.jpeg/revision/latest?cb=20201121200403',
+      message: 'ي عم والله واحشني',
+      time: '08:18 am',
+    ),
+    PersonModel(
+      name: 'The Hacker',
+      imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/5/5f/Alberto_conversi_profile_pic.jpg',
+      message: 'عمك مات وسابلك قطعه ارض وبيقولك تعالى انت واخوك علشان تاخدوها',
+      time: '07:12 am',
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,184 +117,61 @@ class MessengerScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              padding: EdgeInsets.all(5.0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: Colors.grey[300],
-              ),
-              child: Row(
-                children: [
-                  Icon(Icons.search),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text('Search'),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  PersonsHistory(
-                    imageUrl:
-                        'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                    name: 'Ahmed Mohamed',
-                  ),
-                  PersonsHistory(
-                    imageUrl:
-                        'https://static.wikia.nocookie.net/sonic-underground/images/0/00/Guy.jpeg/revision/latest?cb=20201121200403',
-                    name: 'Mohamed Ibrahim',
-                  ),
-                  PersonsHistory(
-                    imageUrl:
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnub98gyoXNvkPnyOWxTE1zzAQiP1aeYceGA&usqp=CAU',
-                    name: 'Eman Mohamed',
-                  ),
-                  PersonsHistory(
-                    imageUrl:
-                        'https://expertphotography.com/wp-content/uploads/2018/10/cool-profile-pictures-retouching-1.jpg',
-                    name: 'Ghada Khaled',
-                  ),
-                  PersonsHistory(
-                    imageUrl:
-                        'https://i.pinimg.com/736x/04/bb/21/04bb2164bbfa3684118a442c17d086bf.jpg',
-                    name: 'Ali Mohamed',
-                  ),
-                  PersonsHistory(
-                    imageUrl:
-                        'https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                    name: 'Elsayed Ibrahim',
-                  ),
-                  PersonsHistory(
-                    imageUrl:
-                        'https://helostatus.com/wp-content/uploads/2021/03/2021-WhatsApp-profile-photo.jpg',
-                    name: 'Ahmed Abdelfatah',
-                  ),
-                  PersonsHistory(
-                    imageUrl:
-                        'https://expertphotography.com/wp-content/uploads/2020/08/social-media-profile-photos-9.jpg',
-                    name: 'Yara Ayman',
-                  ),
-                  PersonsHistory(
-                    imageUrl:
-                        'https://upload.wikimedia.org/wikipedia/commons/5/5f/Alberto_conversi_profile_pic.jpg',
-                    name: 'The Hacker',
-                  ),
-                ],
-              ),
-            ),
-            Divider(
-              thickness: 2,
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Column(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.all(5.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.grey[300],
+                ),
+                child: Row(
                   children: [
-                    PersonChat(
-                      name: 'Ali Mohamed',
-                      imageUrl:
-                          'https://i.pinimg.com/736x/04/bb/21/04bb2164bbfa3684118a442c17d086bf.jpg',
-                      message: 'ايه الاخبار؟',
-                      time: '02:30 pm',
-                    ),
+                    Icon(Icons.search),
                     SizedBox(
-                      height: 10,
+                      width: 10,
                     ),
-                    PersonChat(
-                      name: 'Ghada Khaled',
-                      imageUrl:
-                          'https://expertphotography.com/wp-content/uploads/2018/10/cool-profile-pictures-retouching-1.jpg',
-                      message:
-                          'كنت لسه بذاكر امبارح والى هو لسه مخلصه دلوقتى وبقلب ف الفيس',
-                      time: '02:15 pm',
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    PersonChat(
-                      name: 'Ahmed Abdelfatah',
-                      imageUrl:
-                          'https://helostatus.com/wp-content/uploads/2021/03/2021-WhatsApp-profile-photo.jpg',
-                      message: 'Hello, My name is Ahmed',
-                      time: '01:15 pm',
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    PersonChat(
-                      name: 'Elsayed Ibrahim',
-                      imageUrl:
-                          'https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                      message: 'Hello, Amr How are you?',
-                      time: '01:00 pm',
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    PersonChat(
-                      name: 'Ahmed Mohamed',
-                      imageUrl:
-                          'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                      message: 'ايه ي عم فينك ليك واحشة',
-                      time: '12:30 pm',
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    PersonChat(
-                      name: 'Eman Mohamed',
-                      imageUrl:
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnub98gyoXNvkPnyOWxTE1zzAQiP1aeYceGA&usqp=CAU',
-                      message: 'كنت ملخصه المنهج',
-                      time: '11:14 am',
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    PersonChat(
-                      name: 'Yara Ayman',
-                      imageUrl:
-                          'https://expertphotography.com/wp-content/uploads/2020/08/social-media-profile-photos-9.jpg',
-                      message: 'ابدا شغاله على المشروع',
-                      time: '09:15 am',
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    PersonChat(
-                      name: 'Mohamed Ibrahim',
-                      imageUrl:
-                          'https://static.wikia.nocookie.net/sonic-underground/images/0/00/Guy.jpeg/revision/latest?cb=20201121200403',
-                      message: 'ي عم والله واحشني',
-                      time: '08:18 am',
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    PersonChat(
-                      name: 'The Hacker',
-                      imageUrl:
-                          'https://upload.wikimedia.org/wikipedia/commons/5/5f/Alberto_conversi_profile_pic.jpg',
-                      message:
-                          'عمك مات وسابلك قطعه ارض وبيقولك تعالى انت واخوك علشان تاخدوها',
-                      time: '07:12 am',
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
+                    Text('Search'),
                   ],
                 ),
               ),
-            ),
-          ],
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                height: 100,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => PersonsHistory(
+                    name: personModel[index].name,
+                    imageUrl: personModel[index].imageUrl,
+                  ),
+                  separatorBuilder: (context, index) => SizedBox(
+                    width: 15,
+                  ),
+                  itemCount: personModel.length,
+                ),
+              ),
+              Divider(
+                thickness: 2,
+              ),
+              ListView.separated(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemBuilder: (context, index) => PersonChat(
+                  imageUrl: personModel[index].imageUrl,
+                  name: personModel[index].name,
+                  message: personModel[index].message,
+                  time: personModel[index].time,
+                ),
+                separatorBuilder: (context, index) => SizedBox(
+                  height: 10,
+                ),
+                itemCount: personModel.length,
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -378,4 +320,18 @@ class PersonsHistory extends StatelessWidget {
       ),
     );
   }
+}
+
+class PersonModel {
+  final String name;
+  final String imageUrl;
+  final String message;
+  final String time;
+
+  PersonModel({
+    this.name,
+    this.imageUrl,
+    this.message,
+    this.time,
+  });
 }
