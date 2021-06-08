@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_udemy_abdullah/shared/components/components.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   var formKey = GlobalKey<FormState>();
+  bool showPassword = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,41 +35,41 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  TextFormField(
+                  defaultFormField(
                     controller: emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: 'Email Address',
-                      prefixIcon: Icon(Icons.email),
-                      border: OutlineInputBorder(),
-                    ),
-                    validator: (value) {
+                    type: TextInputType.emailAddress,
+                    validate: (String value) {
                       if (value.isEmpty) {
-                        return 'Email address must not be empty';
+                        return 'Email must not be empty';
                       }
                       return null;
                     },
+                    label: 'Email Address',
+                    prefixIcon: Icons.email,
                   ),
                   SizedBox(
                     height: 15,
                   ),
-                  TextFormField(
-                    controller: passwordController,
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      prefixIcon: Icon(Icons.lock),
-                      suffixIcon: Icon(Icons.remove_red_eye),
-                      border: OutlineInputBorder(),
-                    ),
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return 'Password must not be empty';
-                      }
-                      return null;
-                    },
-                  ),
+                  defaultFormField(
+                      controller: passwordController,
+                      type: TextInputType.visiblePassword,
+                      validate: (String value) {
+                        if (value.isEmpty) {
+                          return 'Password is too short';
+                        }
+                        return null;
+                      },
+                      label: 'Password',
+                      prefixIcon: Icons.lock,
+                      suffixIcon: showPassword
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                      isPassword: showPassword,
+                      suffixPressed: () {
+                        setState(() {
+                          showPassword = !showPassword;
+                        });
+                      }),
                   SizedBox(
                     height: 20,
                   ),
